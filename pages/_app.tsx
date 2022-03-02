@@ -1,8 +1,14 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
+import { SiteContextProvider } from '../context/state'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+
+  return (
+    <SiteContextProvider >
+      <Component {...pageProps} />
+    </SiteContextProvider>
+  )
 }
 
 export default MyApp

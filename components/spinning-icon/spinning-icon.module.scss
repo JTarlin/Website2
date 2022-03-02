@@ -1,0 +1,30 @@
+@use '../../styles/partials/animations';
+@import '../../styles/partials/color';
+
+.icon {
+    color: var(--color-text-primary);
+    border-radius: 50%;
+    outline:none;
+    padding: 0;
+    background: none;
+    border:none;
+    min-height: 1.5rem;
+    min-width: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover, &.active, &:focus-visible {
+      animation: spin 3s linear infinite;
+      color: var(--color-text-secondary);
+      cursor: pointer;
+    }
+
+    &.active:focus-visible {
+        box-shadow: 0px 0px 0px 3px var(--color-focus); 
+    }
+}
+
+.icon > svg {
+    width: 1.2rem;
+    height: 1.2rem;
+}
